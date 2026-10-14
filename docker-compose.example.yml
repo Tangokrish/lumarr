@@ -1,0 +1,27 @@
+# Minimal example: Seerr behind the Lumarr theme.
+# Copy nginx.conf and the theme/ folder next to this file.
+
+services:
+  seerr:
+    image: ghcr.io/seerr-team/seerr:latest
+    container_name: seerr
+    init: true
+    environment:
+      - TZ=America/New_York
+      - PORT=5055
+    volumes:
+      - ./seerr-config:/app/config
+    # No ports here: Seerr is only reachable through Lumarr
+    restart: unless-stopped
+
+  lumarr:
+    image: nginx:alpine
+    container_name: lumarr
+    ports:
+      - "5055:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./theme:/usr/share/nginx/custom:ro
+    depends_on:
+      - seerr
+    restart: unless-stopped

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 290" width="400" height="290">
+  <circle cx="200" cy="85" r="62" fill="none" stroke="#06B6D4" stroke-width="20"/>
+  <circle cx="200" cy="85" r="23" fill="#00D2FF"/>
+  <text x="200" y="262" text-anchor="middle" font-family="Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="100" font-weight="700" letter-spacing="1" fill="#F3F4F6">Lumarr</text>
+</svg>

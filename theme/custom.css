@@ -1,0 +1,339 @@
+/* ===================================================
+   Lumarr: a theme for Seerr
+   =================================================== */
+
+:root {
+    /* Layout */
+    --bg:            #1A1A1A;   /* main app background */
+    --sidebar:       #121212;   /* sidebar / header panel */
+    --card:          #242424;   /* cards, modals, search, dropdowns */
+    --border:        #2D2D2D;   /* borders and dividers */
+
+    /* Typography */
+    --heading:       #F3F4F6;   /* headings and titles */
+    --body:          #9CA3AF;   /* body and descriptions */
+    --meta:          #6B7280;   /* timestamps, subtitles, hints */
+
+    /* Interactive */
+    --link-idle:     #9CA3AF;   /* inactive sidebar links */
+    --hover:         #313131;   /* standard hover highlight */
+    --accent:        #06B6D4;   /* electric cyan: active, key buttons */
+    --accent-hover:  #0891B2;   /* cyan button hover */
+    --focus:         #00D2FF;   /* focus rings on inputs */
+
+    /* Status */
+    --success:       #10B981;
+    --success-bg:    rgba(16, 185, 129, 0.15);
+    --warning:       #F59E0B;
+    --warning-bg:    rgba(245, 158, 11, 0.15);
+    --danger:        #EF4444;
+    --danger-bg:     rgba(239, 68, 68, 0.15);
+}
+
+/* ================= Layout ================= */
+html,
+body,
+.bg-gray-900 {
+    background-color: var(--bg) !important;
+}
+
+/* Top band behind "Recently Added": flat */
+.from-gray-800,
+.from-gray-900 {
+    --tw-gradient-from: var(--bg) !important;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+.to-gray-900 {
+    --tw-gradient-to: var(--bg) !important;
+}
+
+/* Sidebar */
+.sidebar {
+    background: var(--sidebar) !important;
+    border-right: 1px solid var(--border);
+}
+
+/* Header / search bar strip */
+.searchbar {
+    background-color: var(--sidebar) !important;
+    border-bottom: 1px solid var(--border);
+}
+
+/* Cards, modals, dropdowns */
+.bg-gray-800 {
+    background-color: var(--card) !important;
+}
+
+/* Borders and dividers */
+.border-gray-600,
+.border-gray-700,
+.divide-gray-700 > * + * {
+    border-color: var(--border) !important;
+}
+
+/* Standard hover highlight */
+.hover\:bg-gray-700:hover,
+.focus\:bg-gray-700:focus {
+    background-color: var(--hover) !important;
+}
+
+/* ================= Typography ================= */
+body,
+.text-white {
+    color: var(--heading) !important;
+}
+.text-gray-300,
+.text-gray-400 {
+    color: var(--body) !important;
+}
+.text-gray-500 {
+    color: var(--meta) !important;
+}
+
+/* ================= Sidebar links ================= */
+.sidebar nav a {
+    color: var(--link-idle) !important;
+}
+.sidebar nav a:hover {
+    color: var(--heading) !important;
+    background-color: var(--hover) !important;
+}
+
+/* Active page: cyan text with a cyan edge on a subtle block */
+.sidebar nav a.from-indigo-600 {
+    background: var(--hover) !important;
+    color: var(--accent) !important;
+    box-shadow: inset 3px 0 0 var(--accent);
+}
+
+/* ================= Inputs and focus ================= */
+input,
+select,
+textarea,
+input.bg-gray-900 {
+    background-color: var(--card) !important;
+    border-color: var(--border) !important;
+    color: var(--heading) !important;
+}
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--focus) !important;
+    box-shadow: 0 0 0 2px var(--focus) !important;
+    outline: none !important;
+}
+.focus\:ring-indigo-500:focus,
+.ring-indigo-500 {
+    --tw-ring-color: var(--focus) !important;
+}
+.focus\:border-indigo-500:focus {
+    border-color: var(--focus) !important;
+}
+
+/* ================= Primary buttons (were purple) ================= */
+.bg-indigo-600,
+.bg-indigo-700 {
+    background-color: var(--accent) !important;
+    border-color: var(--accent) !important;
+    color: #04121A !important;      /* dark text, readable on cyan */
+}
+.hover\:bg-indigo-500:hover,
+.hover\:bg-indigo-600:hover {
+    background-color: var(--accent-hover) !important;
+}
+.from-indigo-600,
+.from-indigo-500,
+.hover\:from-indigo-500:hover {
+    --tw-gradient-from: var(--accent) !important;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+.to-purple-600,
+.to-purple-500,
+.hover\:to-purple-500:hover {
+    --tw-gradient-to: var(--accent-hover) !important;
+}
+.text-indigo-300,
+.text-indigo-400,
+.text-indigo-500 {
+    color: var(--accent) !important;
+}
+.border-indigo-500,
+.border-indigo-600 {
+    border-color: var(--accent) !important;
+}
+
+/* ================= Status pill badges ================= */
+/* Available (success) */
+.bg-green-500.bg-opacity-80,
+.bg-green-400.bg-opacity-80 {
+    background-color: var(--success-bg) !important;
+    color: var(--success) !important;
+    border: 1px solid var(--success) !important;
+}
+
+/* Requested / pending (warning) */
+.bg-indigo-500.bg-opacity-80,
+.bg-yellow-500.bg-opacity-80 {
+    background-color: var(--warning-bg) !important;
+    color: var(--warning) !important;
+    border: 1px solid var(--warning) !important;
+}
+
+/* Failed / problem (danger) */
+.bg-red-500.bg-opacity-80,
+.bg-red-600.bg-opacity-80 {
+    background-color: var(--danger-bg) !important;
+    color: var(--danger) !important;
+    border: 1px solid var(--danger) !important;
+}
+
+/* Danger buttons */
+.bg-red-600:not(.bg-opacity-80) {
+    background-color: var(--danger) !important;
+}
+
+/* ================= MOVIE / SERIES badges: neutral ================= */
+.bg-blue-500,
+.bg-blue-600,
+.bg-purple-500,
+.bg-purple-600 {
+    background-color: rgba(18, 18, 18, 0.85) !important;
+    color: var(--heading) !important;
+}
+
+/* ================= Small touches ================= */
+::selection {
+    background: var(--accent);
+    color: #04121A;
+}
+
+/* ================= Catch-all purple overrides ================= */
+
+/* Any indigo background, including variants like bg-indigo-600/80 */
+[class^="bg-indigo-"],
+[class*=" bg-indigo-"] {
+    background-color: var(--accent) !important;
+    color: #04121A !important;
+}
+
+/* Any indigo or purple gradient: buttons AND gradient headings like "Issues" */
+[class^="from-indigo-"],
+[class*=" from-indigo-"],
+[class^="from-purple-"],
+[class*=" from-purple-"] {
+    --tw-gradient-from: var(--accent) !important;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+[class^="to-purple-"],
+[class*=" to-purple-"],
+[class^="to-indigo-"],
+[class*=" to-indigo-"] {
+    --tw-gradient-to: var(--focus) !important;
+}
+
+/* Keep the sidebar's active link styled (beats the rules above) */
+.sidebar nav a[class*=" from-indigo-"] {
+    background: var(--hover) !important;
+    color: var(--accent) !important;
+    box-shadow: inset 3px 0 0 var(--accent);
+}
+
+/* ================= Gradient text headings (Requests, Issues, etc.) ================= */
+.bg-clip-text,
+[class*="bg-clip-text"] {
+    background-image: linear-gradient(to bottom right, var(--accent), var(--focus)) !important;
+}
+
+/* ================= Seerr's own heading gradient ================= */
+.text-overseerr {
+    --tw-gradient-from: var(--accent) var(--tw-gradient-from-position) !important;
+    --tw-gradient-to: var(--focus) var(--tw-gradient-to-position) !important;
+    background-image: linear-gradient(to bottom right, var(--accent), var(--focus)) !important;
+}
+
+/* ================= MOVIE / SERIES badges: muted slate ================= */
+[class^="bg-blue-"],
+[class*=" bg-blue-"],
+[class^="bg-purple-"],
+[class*=" bg-purple-"] {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    color: #9CA3AF !important;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+/* ================= Page titles: solid #F3F4F6, no gradient ================= */
+.text-overseerr,
+.bg-clip-text,
+[class*="bg-clip-text"] {
+    background: none !important;
+    color: var(--heading) !important;
+    -webkit-text-fill-color: var(--heading) !important;
+}
+
+/* ================= Badges: readable on bright posters ================= */
+[class^="bg-blue-"],
+[class*=" bg-blue-"],
+[class^="bg-purple-"],
+[class*=" bg-purple-"] {
+    background-color: rgba(18, 18, 18, 0.75) !important;
+    color: #D1D5DB !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* ================= Bigger logo ================= */
+.sidebar img[src*="logo_full"],
+img[src*="logo_full"] {
+    height: 70px !important;
+    width: auto !important;
+    max-width: 100% !important;
+}
+
+/* ================= Logo spacing ================= */
+.sidebar img[src*="logo_full"],
+img[src*="logo_full"] {
+    margin-top: 28px !important;
+    margin-bottom: 4px !important;
+}
+
+/* ================= "Requested" badge: amber pill ================= */
+span[class*="rounded-full"][class*="bg-indigo-500"],
+div[class*="rounded-full"][class*="bg-indigo-500"] {
+    background-color: var(--warning-bg) !important;
+    color: var(--warning) !important;
+    border: 1px solid var(--warning) !important;
+}
+
+/* ================= "Requested" status badge: amber pill ================= */
+a[href*="manage="][class*="bg-indigo-500"],
+a[href*="manage="][class*="bg-indigo-500"]:hover {
+    background-color: var(--warning-bg) !important;
+    border-color: var(--warning) !important;
+    color: var(--warning) !important;
+}
+a[href*="manage="][class*="bg-indigo-500"] * {
+    color: var(--warning) !important;
+}
+
+/* ================= "Requested" badge: solid, matching "Available" ================= */
+a[href*="manage="][class*="bg-indigo-500"],
+a[href*="manage="][class*="bg-indigo-500"]:hover {
+    background-color: var(--warning) !important;
+    border-color: var(--warning) !important;
+    color: #FFFFFF !important;
+}
+a[href*="manage="][class*="bg-indigo-500"] * {
+    color: #FFFFFF !important;
+}
+
+/* ================= Input side buttons (password eye, etc.) ================= */
+.input-action,
+button.input-action {
+    background-color: var(--card) !important;
+    border-color: var(--border) !important;
+    color: var(--body) !important;
+}
+.input-action:hover {
+    background-color: var(--hover) !important;
+    color: var(--accent) !important;
+}
